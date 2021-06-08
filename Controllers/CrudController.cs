@@ -7,10 +7,6 @@ using System.Threading.Tasks;
 
 namespace WebApplication1.Controllers
 {
-    
-
-    
-
     [Route("api/crud")]
     [ApiController]
     public class CrudController : ControllerBase
