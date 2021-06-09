@@ -7,8 +7,8 @@ namespace WebApplication1
 {
     class ValuesHolder : IValuesHolder
     {
-        public ValuesHolder() => Values = new List<string>();
         public List<string> Values { get; set; }
+        public ValuesHolder() => Values = new List<string>();
         public List<string> Get() => Values;
         public void Add(string str) { Values.Add(str); }
     }

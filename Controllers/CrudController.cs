@@ -7,14 +7,17 @@ using System.Threading.Tasks;
 
 namespace WebApplication1.Controllers
 {
-    [Route("api/crud")]
     [ApiController]
+    [Route("crud")]
     public class CrudController : ControllerBase
     {
         private readonly IValuesHolder _holder;
+        public IValuesHolder nHolder = new ValuesHolder();
+        
         public CrudController(IValuesHolder holder)
         {
             _holder = holder;
+            nHolder.Values.Add("1234");
         }
 
         [HttpPost("create")]
@@ -24,10 +27,16 @@ namespace WebApplication1.Controllers
             return Ok();
         }
 
+        [HttpGet]
+        public string Test()
+        {
+            return "Test is good";
+        }
+
         [HttpGet("read")]
         public IActionResult Read()
         {
-            return Ok(_holder.Get());
+            return Ok();//_holder.Get()
         }
 
         [HttpPut("update")]
