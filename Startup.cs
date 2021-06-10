@@ -27,6 +27,7 @@ namespace WebApplication1
         {
             services.AddControllers();
             services.AddSingleton<WeatherForecast>();
+            services.AddSingleton<WeatherForecastList>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
